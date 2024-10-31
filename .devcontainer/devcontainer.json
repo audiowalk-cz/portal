@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-	"name": "Audiowalk.cz",
+	"name": "Audiowalk.cz Portál",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"dockerFile": "Dockerfile",
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -12,7 +12,7 @@
 	],
 	"runArgs": [
 		"--name",
-		"audiowalk_devcontainer"
+		"audiowalk_portal_devcontainer"
 	]
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
