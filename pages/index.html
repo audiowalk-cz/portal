@@ -69,6 +69,18 @@
       font-weight: 800;
       font-size: 1.5em;
     }
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 3em;
+      }
+      h2 {
+        font-size: 2.5em;
+      }
+      h3 {
+        font-size: 2em;
+      }
+      
+    }
 
     .phone-frame {
       width: 100%;
@@ -175,12 +187,14 @@
 <body>
   <!-- Jumbotron -->
 
-  <div class="row overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light jumbotron">
-    <div class="col p-lg-2 pt-lg-5 mx-auto my-5">
-      <h1>Vytvářejte audiowalky</h1>
-      <p class="lead fw-normal">Pomáháme na svět audiowalkům. V mobilní aplikaci i přímo na webu.</p>
-      <p class="lead fw-normal">Offline mód, navigace, vizuální styl, větvení příběhu, interakce, vstupenkový systém.</p>
-      <a class="btn btn-outline-light" href="#kontakt">Chci vytvořit vlastní audiowalk</a>
+  <div class="container-fluid">
+    <div class="row overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light jumbotron">
+      <div class="col p-lg-2 pt-lg-5 mx-auto my-5">
+        <h1>Vytvářejte audiowalky</h1>
+        <p class="lead fw-normal">Pomáháme na svět audiowalkům. V mobilní aplikaci i&nbsp;přímo na webu.</p>
+        <p class="lead fw-normal">Offline mód, navigace, vizuální styl, větvení příběhu, interakce, vstupenkový systém.</p>
+        <a class="btn btn-outline-light" href="#kontakt">Chci vytvořit vlastní audiowalk</a>
+      </div>
     </div>
   </div>
 
@@ -415,7 +429,7 @@
   <footer class="container py-5">
     <h2 class="text-center my-5" id="kontakt">Kontaktujte nás</h2>
     <div class="row text-center">
-      <div class="col-4 col-md">
+      <div class="col-12 col-md-4">
         <h5>Spolupracovali jsme</h5>
         <ul class="list-unstyled text-small">
           <li>Pomezí</li>
@@ -423,14 +437,14 @@
           <li>Korzo Národní</li>
         </ul>
       </div>
-      <div class="col-4 col-md">
+      <div class="col-12 col-md-4">
         <h5>Tým tvůrců</h5>
         <ul class="list-unstyled text-small">
           <li>Martin Kopeček<br /><small>vývoj mobilní i webové aplikace</small></li>
           <li>Jan Vlasatý<br /><small>vývoj, UX, grafika</small></li>
         </ul>
       </div>
-      <div class="col-4 col-md">
+      <div class="col-12 col-md-4">
         <h5>Kontakt</h5>
         <ul class="list-unstyled text-small">
           <li><a href="mailto:martin.kopecek@smallhill.cz">martin.kopecek@smallhill.cz</a></li>
