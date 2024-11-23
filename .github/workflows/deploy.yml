@@ -1,0 +1,25 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+      - feature/deployment
+
+jobs:
+  build:
+    name: Publish
+    uses: ./.github/workflows/publish.yml
+
+  deploy:
+    name: Notify Watchtower
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Notify Watchtower
+        uses: darnfish/watchtower-update@v3.2
+        with:
+          url: "${{ vars.WATCHTOWER_URL }}"
+          api_token: "${{ secrets.WATCHTOWER_TOKEN }}"
+          images: "ghcr.io/audiowalk-cz/portal"
