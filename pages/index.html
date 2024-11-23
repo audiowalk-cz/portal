@@ -1,487 +1,303 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+---
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Audiowalk.cz</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!-- Custom CSS for theme -->
-  <style>
-
-    /* @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Lexend+Deca:wght@100..900&display=swap'); */
-    @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Lexend+Deca:wght@100..900&family=Mea+Culpa&display=swap');
-    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-
-    .font-edu {
-      font-family: 'Edu AU VIC WA NT Pre', sans-serif;
-    }
-    .font-meaculpa {
-      font-family: 'Mea Culpa', sans-serif;
-      line-height: .9em;
-    }
-
-    body {
-      background-color: #f8f9fa;
-      color: #343a40;
-      font-family: 'Lexend Deca', sans-serif;
-    }
-
-    .navbar {
-      background-color: #343a40;
-    }
-
-    .navbar-brand,
-    .nav-link {
-      color: #ffffff !important;
-    }
-
-    .jumbotron {
-      /* background-color: #6c757d; */
-      color: #ffffff;
-      padding: 5rem 1rem;
-      background-image: url('images/bg.jpg');
-      background-position: top center;
-      background-size: cover;
-
-    }
-
-    .bg-gradient-dark {
-      background-color: #202020;
-      background-image: linear-gradient(45deg, #535353 0%,#3e3e3e 20%, #000000 100%);
-    }
-    .bg-gradient-light {
-      background-color: #f8f8f8;
-      background-image: linear-gradient(45deg, #ffffff 0%,#e7e7e7 20%, #e4e4e4 100%);
-    }
-
-    h1 {
-      font-weight: 800;
-      font-size: 5em;
-    }
-    h2 {
-      font-weight: 800;
-      font-size: 4em;
-    }
-    h3 {
-      font-weight: 800;
-      font-size: 1.5em;
-    }
-    @media screen and (max-width: 768px) {
-      h1 {
-        font-size: 3em;
-      }
-      h2 {
-        font-size: 2.5em;
-      }
-      h3 {
-        font-size: 2em;
-      }
-      
-    }
-
-    .phone-frame {
-      width: 100%;
-      max-width: 300px;
-      min-height: 200px;
-      border-radius: 2rem 2rem 0 0;
-      border-top: .5rem solid #fff;
-      border-left: .5rem solid #fff;
-      border-right: .5rem solid #fff;
-      padding: .5rem;
-      overflow: hidden;
-    }
-    .phone-frame-dark {
-      border-top: .5rem solid rgb(33, 37, 41);
-      border-left: .5rem solid rgb(33, 37, 41);
-      border-right: .5rem solid rgb(33, 37, 41);
-    }
-
-    .img-thumbnail {
-      max-width: 100%;
-      overflow: hidden;
-      padding: 0;
-      border-radius: 0;
-      background-color: #000;
-      background-size: cover;
-      background-position: 50% 50%;
-    }
-
-    .img-src-ukonicka {
-      background-image: url('images/hrad.png');
-    }
-    .img-src-studenstskarevolta {
-      background-image: url('images/studentskarevolta.jpg');
-    }
-    .img-src-neviditelnatrznice {
-      background-image: url('images/neviditelnatrznice.jpg');
-    }
-    .img-src-bedrich {
-      background-image: url('images/bedrich.jpg');
-    }
-    .img-src-nadmestem {
-      background-image: url('images/nadmestem.jpg');
-    }
-    .img-src-bilyobraz {
-      background-image: url('images/bilyobraz.jpg');
-    }
-
-    #clock {
-      font-size: 2.5em;
-      font-weight: 800;
-    }
-
-    .display-icon {
-      font-size: 2em;
-    }
-
-
-    .bg-map2 {
-      background-image: url('images/map2.png');
-      background-size: cover;
-      background-position: 50% 50%;
-    }
-
-    .bg-map {
-      background-image: url('images/map.png');
-      background-size: cover;
-      background-position: 50% 50%;
-    }
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-    .bg-map::after {
-      content: '';
-      display: block;
-      width: 1.5em;
-      height: 1.5em;
-      position:relative;
-      top: 50%;
-      left: 50%;
-      border-radius: 50%;
-      border: .2em solid white;
-      background-color: rgb(206, 29, 29);
-      box-shadow: 0 0 1.5em .1em rgba(206, 29, 29, .7);
-      animation: forwards 2s infinite pulse;
-    }
-
-
-    .link-external::after {
-      content: '';
-      font-size: 1.5em;
-      margin-left: 0.5em;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Jumbotron -->
-
-  <div class="container-fluid g-0">
-    <div class="row overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light jumbotron g-0">
-      <div class="col p-lg-2 pt-lg-5 mx-auto my-5">
-        <h1>Vytvářejte audiowalky</h1>
-        <p class="lead fw-normal">Pomáháme na svět audiowalkům. V mobilní aplikaci i&nbsp;přímo na webu.</p>
-        <p class="lead fw-normal">Offline mód, navigace, vizuální styl, větvení příběhu, interakce, vstupenkový systém.</p>
-        <a class="btn btn-outline-light" href="#kontakt">Chci vytvořit vlastní audiowalk</a>
-      </div>
+<div class="container-fluid g-0">
+  <div class="row overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light jumbotron g-0">
+    <div class="col p-lg-2 pt-lg-5 mx-auto my-5">
+      <h1>Vytvářejte audiowalky</h1>
+      <p class="lead fw-normal">Pomáháme na svět audiowalkům. V mobilní aplikaci i&nbsp;přímo na webu.</p>
+      <p class="lead fw-normal">
+        Offline mód, navigace, vizuální styl, větvení příběhu, interakce, vstupenkový systém.
+      </p>
+      <a class="btn btn-outline-light" href="#kontakt">Chci vytvořit vlastní audiowalk</a>
     </div>
   </div>
+</div>
 
-  <!-- Main Content -->
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12 col-sm-6 col-lg-4 d-flex flex-column justify-content-between bg-gradient-dark pt-3 px-3 text-center text-white overflow-hidden">
-        <div class="my-3 py-3">
-          <h3>Moderní aplikace</h3>
-          <p class="lead">přehrávání při zamknuté obrazovce<br />systémová integrace přehrávače</p>
-        </div>
-        <div class="bg-gradient-light mx-auto phone-frame text-dark">
-          <div class="">
-            <div class="text-center" id="clock">12:12</div>
-            <div class="row d-flex align-items-center px-2">
-              <div class="col-3">
-                <img src="images/hrad.png" alt="Hrad" class="img-fluid bg-light shadow rounded" />
+<!-- Main Content -->
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="col-12 col-sm-6 col-lg-4 d-flex flex-column justify-content-between bg-gradient-dark pt-3 px-3 text-center text-white overflow-hidden"
+    >
+      <div class="my-3 py-3">
+        <h3>Moderní aplikace</h3>
+        <p class="lead">přehrávání při zamknuté obrazovce<br />systémová integrace přehrávače</p>
+      </div>
+      <div class="bg-gradient-light mx-auto phone-frame text-dark">
+        <div class="">
+          <div class="text-center" id="clock">12:12</div>
+          <div class="row d-flex align-items-center px-2">
+            <div class="col-3">
+              <img src="images/hrad.png" alt="Hrad" class="img-fluid bg-light shadow rounded" />
+            </div>
+            <div class="col-9 text-start">
+              <span class="">Setkání s Davidem</span>
+              <span class="text-muted small">Hradní audiowalk</span>
+            </div>
+            <div class="col-12 mt-3">
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 5px"
+              >
+                <div class="progress-bar bg-dark" style="width: 75%"></div>
               </div>
-              <div class="col-9 text-start">
-                <span class="">Setkání s Davidem</span>
-                <span class="text-muted small">Hradní audiowalk</span>
-              </div>
-              <div class="col-12 mt-3">
-                <div class="progress" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 5px">
-                  <div class="progress-bar bg-dark" style="width: 75%"></div>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <i class="bi bi-rewind-fill display-icon"></i>
                 </div>
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <i class="bi bi-rewind-fill display-icon"></i>
-                  </div>
-                  <div>
-                    <i class="bi bi-play-fill display-icon"></i>
-                  </div>
-                  <div>
-                    <i class="bi bi-fast-forward-fill display-icon"></i>
-                  </div>  
+                <div>
+                  <i class="bi bi-play-fill display-icon"></i>
+                </div>
+                <div>
+                  <i class="bi bi-fast-forward-fill display-icon"></i>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-lg-4 order-lg-1 d-flex flex-column justify-content-between bg-gradient-light pt-3 px-3 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h3>Offline mód</h3>
-          <p class="lead">
-            přehrávání funguje i&nbsp;bez internetu
-            <br />
-            lze zavřít web i&nbsp;restartovat mobil
-          </p>
+    </div>
+    <div
+      class="col-12 col-sm-6 col-lg-4 order-lg-1 d-flex flex-column justify-content-between bg-gradient-light pt-3 px-3 text-center overflow-hidden"
+    >
+      <div class="my-3 p-3">
+        <h3>Offline mód</h3>
+        <p class="lead">
+          přehrávání funguje i&nbsp;bez internetu
+          <br />
+          lze zavřít web i&nbsp;restartovat mobil
+        </p>
+      </div>
+      <div class="bg-dark mx-auto phone-frame phone-frame-dark text-light d-flex flex-column justify-content-center">
+        <div class="text-center display-3">
+          <i class="bi bi-check2-circle"></i>
         </div>
-        <div class="bg-dark mx-auto phone-frame phone-frame-dark text-light d-flex flex-column justify-content-center">
-          <div class="text-center display-3">
-            <i class="bi bi-check2-circle"></i>
-          </div>
+        <p>Audiowalk můžete<br />přehrát i bez internetu</p>
+      </div>
+    </div>
+    <div
+      class="col-12 col-sm-6 col-lg-4 order-sm-3 order-md-3 order-lg-2 d-flex flex-column justify-content-between bg-gradient-dark pt-3 px-3 text-center text-white overflow-hidden"
+    >
+      <div class="my-3 p-3">
+        <h3>Navigace na mapě</h3>
+        <p class="lead">vedení diváka po zvolené trase<br />využití polohy GPS</p>
+      </div>
+      <div class="bg-light mx-auto phone-frame bg-map"></div>
+    </div>
+    <div
+      class="col-12 col-sm-6 col-lg-4 order-sm-2 order-md-2 order-lg-3 d-flex flex-column justify-content-between bg-gradient-light pt-3 px-3 text-center overflow-hidden"
+    >
+      <div class="my-3 p-3">
+        <h3>Vstupenkový systém</h3>
+        <p class="lead">výběr termínu divákem<br />napojení na objednávkový systém</p>
+      </div>
+      <div class="bg-dark d-flex flex-column justify-content-between px-4 py-3 mx-auto phone-frame phone-frame-dark">
+        <span class="text-light fw-bold">Objednání vstupenky</span>
+        <select class="form-select" aria-label="Default select example" data-bs-theme="dark" id="dates">
+          <option selected>Vybrat den</option>
+          <option value="1">12. 11.</option>
+          <option value="2">13. 11.</option>
+          <option value="3">14. 11.</option>
+        </select>
+        <select class="form-select" aria-label="Default select example" data-bs-theme="dark">
+          <option selected>Vybrat hodinu</option>
+          <option value="1">17:00</option>
+          <option value="2">18:00</option>
+          <option value="3">19:00</option>
+        </select>
+        <button class="btn btn-light">Zaplatit</button>
+      </div>
+    </div>
+    <div
+      class="col-12 col-sm-6 col-lg-4 order-sm-4 order-md-4 order-lg-4 d-flex flex-column justify-content-between bg-gradient-dark pt-3 px-3 text-center text-white overflow-hidden"
+    >
+      <div class="my-3 py-3">
+        <h3>Neomezená rozšiřitelnost</h3>
+        <p class="lead">přizpůsobení vizuálnímu stylu<br />široké možnosti interakce</p>
+      </div>
+      <div class="bg-light mx-auto phone-frame bg-map2 d-flex align-items-center">
+        <div class="text-italic mt-3 w-100 font-meaculpa display-3 text-center">Toulky<br />historií</div>
+      </div>
+    </div>
+    <div
+      class="col-12 col-sm-6 col-lg-4 order-sm-5 order-md-5 order-lg-5 d-flex flex-column justify-content-between bg-gradient-light pt-3 px-3 text-center overflow-hidden"
+    >
+      <div class="my-3 p-3">
+        <h3>Scénář a interakce</h3>
+        <p class="lead">větvení příběhu dle scénáře<br />živá interakce s divákem</p>
+      </div>
+      <div class="bg-dark mx-auto phone-frame phone-frame-dark text-light d-flex flex-column justify-content-center">
+        <div>
+          <p class="text-italic mt-3 font-edu">Rozhodni se,<br />s kým půjdeš?</p>
           <p>
-            Audiowalk můžete<br />přehrát i bez internetu
+            <button class="btn btn-light font-edu">Půjdu s Terezou.</button>
+          </p>
+          <p>
+            <button class="btn btn-light font-edu">Půjdu s Davidem.</button>
           </p>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-lg-4 order-sm-3 order-md-3 order-lg-2 d-flex flex-column justify-content-between bg-gradient-dark pt-3 px-3 text-center text-white overflow-hidden">
-        <div class="my-3 p-3">
-          <h3>Navigace na mapě</h3>
-          <p class="lead">vedení diváka po zvolené trase<br />využití polohy GPS</p>
-        </div>
-        <div class="bg-light mx-auto phone-frame bg-map"></div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 order-sm-2 order-md-2 order-lg-3 d-flex flex-column justify-content-between bg-gradient-light pt-3 px-3 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h3>Vstupenkový systém</h3>
-          <p class="lead">výběr termínu divákem<br />napojení na objednávkový systém</p>
-        </div>
-        <div class="bg-dark d-flex flex-column justify-content-between px-4 py-3 mx-auto phone-frame phone-frame-dark">
-          <span class="text-light fw-bold">Objednání vstupenky</span>
-          <select class="form-select" aria-label="Default select example" data-bs-theme="dark" id="dates">
-            <option selected>Vybrat den</option>
-            <option value="1">12. 11.</option>
-            <option value="2">13. 11.</option>
-            <option value="3">14. 11.</option>
-          </select>
-          <select class="form-select" aria-label="Default select example" data-bs-theme="dark">
-            <option selected>Vybrat hodinu</option>
-            <option value="1">17:00</option>
-            <option value="2">18:00</option>
-            <option value="3">19:00</option>
-          </select>
-          <button class="btn btn-light">Zaplatit</button>
+    </div>
+  </div>
+</div>
 
+<div class="container my-5">
+  <h2 class="text-center my-5">Reference</h2>
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-muted">AMU & Korzo Národní (2024)</strong>
+          <h3 class="mb-0">Sejdeme se u&nbsp;Koníčka?</h3>
+          <div class="mb-1 text-body-secondary">Vývoj a UX webové aplikace</div>
+          <p class="card-text mb-auto">Interaktivní audiowalk ze&nbsp;začátku akademického roku 1989/1990</p>
+          <a href="https://ukonicka.audiowalk.cz" target="_blank" class="gap-1">
+            ukonicka.audiowalk.cz <i class="bi bi-box-arrow-up-right"></i>
+          </a>
         </div>
+        <div class="col-4 d-none d-lg-block img-thumbnail img-src-ukonicka"></div>
       </div>
-      <div class="col-12 col-sm-6 col-lg-4 order-sm-4 order-md-4 order-lg-4 d-flex flex-column justify-content-between bg-gradient-dark pt-3 px-3 text-center text-white overflow-hidden">
-        <div class="my-3 py-3">
-          <h3>Neomezená rozšiřitelnost</h3>
-          <p class="lead">přizpůsobení vizuálnímu stylu<br />široké možnosti interakce</p>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-muted">AMU & Korzo Národní (2023)</strong>
+          <h3 class="mb-0">Studentská revolta&nbsp;'89</h3>
+          <div class="mb-1 text-body-secondary">Vývoj, UX, grafika webové aplikace</div>
+          <p class="card-text mb-auto">
+            Audiowalk na&nbsp;Starém městě o&nbsp;svědectvích událostí po&nbsp;17.&nbsp;listopadu&nbsp;1989
+          </p>
+          <a href="https://studentskarevolta89.cz" target="_blank" class="gap-1">
+            studentskarevolta89.cz <i class="bi bi-box-arrow-up-right"></i>
+          </a>
         </div>
-        <div class="bg-light mx-auto phone-frame bg-map2 d-flex align-items-center">
-          <div class="text-italic mt-3 w-100 font-meaculpa display-3 text-center">
-            Toulky<br />historií
-          </div>
-        </div>
+        <div class="col-4 d-none d-lg-block img-thumbnail img-src-studenstskarevolta"></div>
       </div>
-      <div class="col-12 col-sm-6 col-lg-4 order-sm-5 order-md-5 order-lg-5 d-flex flex-column justify-content-between bg-gradient-light pt-3 px-3 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h3>Scénář a interakce</h3>
-          <p class="lead">větvení příběhu dle scénáře<br />živá interakce s divákem</p>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-muted">Pomezí (2021)</strong>
+          <h3 class="mb-0">Bedřich: Poprvé v&nbsp;Praze</h3>
+          <div class="mb-1 text-body-secondary">Vývoj mobilní aplikace (MK)</div>
+          <p class="card-text mb-auto">
+            Audiowalk, který bez přítomnosti herců provede jednoho diváka centrem Prahy a&nbsp;jeho zákoutími.
+          </p>
+          <a href="https://pomezi.com/projekt/bedrich" target="_blank" class="gap-1">
+            pomezi.com <i class="bi bi-box-arrow-up-right"></i>
+          </a>
         </div>
-        <div class="bg-dark mx-auto phone-frame phone-frame-dark text-light d-flex flex-column justify-content-center">
-          <div>
-            <p class="text-italic mt-3 font-edu">
-              Rozhodni se,<br />s kým půjdeš?
-            </p>
-            <p>
-              <button class="btn btn-light font-edu">Půjdu s Terezou.</button>
-            </p>
-            <p>
-              <button class="btn btn-light font-edu">Půjdu s Davidem.</button>
-            </p>
-          </div>
+        <div class="col-4 d-none d-lg-block img-thumbnail img-src-bedrich"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-muted">Pomezí (2021)</strong>
+          <h3 class="mb-0">Bílý obraz</h3>
+          <div class="mb-1 text-body-secondary">Vývoj mobilní aplikace (MK)</div>
+          <p class="mb-auto">
+            Audiowalk po zahradě Winternitzovy vily pro jednoho až dva diváky bez přítomnosti herců.
+          </p>
+          <a href="https://pomezi.com/projekt/bily-obraz" target="_blank" class="link-external">
+            pomezi.com <i class="bi bi-box-arrow-up-right"></i>
+          </a>
         </div>
+        <div class="col-4 d-none d-lg-block img-thumbnail img-src-bilyobraz"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-muted">Pomezí (2020)</strong>
+          <h3 class="mb-0">Neviditelná tržnice</h3>
+          <div class="mb-1 text-body-secondary">Vývoj a UX aplikace pro tablety</div>
+          <p class="card-text mb-auto">
+            Interaktivní multimediální audiowalk v&nbsp;prostorách Pražské tržnice s&nbsp;tabletem a&nbsp;sluchátky.
+          </p>
+          <a href="https://pomezi.com/projekt/neviditelna-trznice" target="_blank" class="gap-1">
+            pomezi.com <i class="bi bi-box-arrow-up-right"></i>
+          </a>
+        </div>
+        <div class="col-4 d-none d-lg-block img-thumbnail img-src-neviditelnatrznice"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-muted">Pomezí (2019)</strong>
+          <h3 class="mb-0">Nad&nbsp;městem</h3>
+          <div class="mb-1 text-body-secondary">Vývoj mobilní aplikace (MK)</div>
+          <p class="card-text mb-auto">
+            V&nbsp;audiowalku následujete hlas ze sluchátek, který vás provází trasou skrze nečekaná místa
+            v&nbsp;pražské Libni.
+          </p>
+          <a href="https://pomezi.com/projekt/nad-mestem" target="_blank" class="gap-1">
+            pomezi.com <i class="bi bi-box-arrow-up-right"></i>
+          </a>
+        </div>
+        <div class="col-4 d-none d-lg-block img-thumbnail img-src-nadmestem"></div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="container my-5">
-    <h2 class="text-center my-5">Reference</h2>
-    <div class="row mb-2">
-      <div class="col-md-6">
-        <div class="row g-0 border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-muted">AMU & Korzo Národní (2024)</strong>
-            <h3 class="mb-0">Sejdeme se u&nbsp;Koníčka?</h3>
-            <div class="mb-1 text-body-secondary">Vývoj a UX webové aplikace</div>
-            <p class="card-text mb-auto">
-              Interaktivní audiowalk ze&nbsp;začátku akademického roku 1989/1990
-            </p>
-            <a href="https://ukonicka.audiowalk.cz" target="_blank" class="gap-1">
-              ukonicka.audiowalk.cz <i class="bi bi-box-arrow-up-right"></i>
-            </a>
-          </div>
-          <div class="col-4 d-none d-lg-block img-thumbnail img-src-ukonicka">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row g-0 border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-muted">AMU & Korzo Národní (2023)</strong>
-            <h3 class="mb-0">Studentská revolta&nbsp;'89</h3>
-            <div class="mb-1 text-body-secondary">Vývoj, UX, grafika webové aplikace</div>
-            <p class="card-text mb-auto">
-              Audiowalk na&nbsp;Starém městě o&nbsp;svědectvích událostí po&nbsp;17.&nbsp;listopadu&nbsp;1989 </p>
-            </p>
-            <a href="https://studentskarevolta89.cz" target="_blank" class="gap-1">
-              studentskarevolta89.cz <i class="bi bi-box-arrow-up-right"></i>
-            </a>
-          </div>
-          <div class="col-4 d-none d-lg-block img-thumbnail img-src-studenstskarevolta">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row g-0 border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-muted">Pomezí (2021)</strong>
-            <h3 class="mb-0">Bedřich: Poprvé v&nbsp;Praze</h3>
-            <div class="mb-1 text-body-secondary">Vývoj mobilní aplikace (MK)</div>
-            <p class="card-text mb-auto">
-              Audiowalk, který bez přítomnosti herců provede jednoho diváka centrem Prahy a&nbsp;jeho zákoutími.
-            </p>
-            <a href="https://pomezi.com/projekt/bedrich" target="_blank" class="gap-1">
-              pomezi.com <i class="bi bi-box-arrow-up-right"></i>
-            </a>
-          </div>
-          <div class="col-4 d-none d-lg-block img-thumbnail img-src-bedrich">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row g-0 border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-muted">Pomezí (2021)</strong>
-            <h3 class="mb-0">Bílý obraz</h3>
-            <div class="mb-1 text-body-secondary">Vývoj mobilní aplikace (MK)</div>
-            <p class="mb-auto">
-              Audiowalk po zahradě Winternitzovy vily pro jednoho až dva diváky bez přítomnosti herců.
-            </p>
-            <a href="https://pomezi.com/projekt/bily-obraz" target="_blank" class="link-external">
-              pomezi.com <i class="bi bi-box-arrow-up-right"></i>
-            </a>
-          </div>
-          <div class="col-4 d-none d-lg-block img-thumbnail img-src-bilyobraz">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row g-0 border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-muted">Pomezí (2020)</strong>
-            <h3 class="mb-0">Neviditelná tržnice</h3>
-            <div class="mb-1 text-body-secondary">Vývoj a UX aplikace pro tablety</div>
-            <p class="card-text mb-auto">
-              Interaktivní multimediální audiowalk v&nbsp;prostorách Pražské tržnice s&nbsp;tabletem a&nbsp;sluchátky.
-            </p>
-            <a href="https://pomezi.com/projekt/neviditelna-trznice" target="_blank" class="gap-1">
-              pomezi.com <i class="bi bi-box-arrow-up-right"></i>
-            </a>
-          </div>
-          <div class="col-4 d-none d-lg-block img-thumbnail img-src-neviditelnatrznice">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row g-0 border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-muted">Pomezí (2019)</strong>
-            <h3 class="mb-0">Nad&nbsp;městem</h3>
-            <div class="mb-1 text-body-secondary">Vývoj mobilní aplikace (MK)</div>
-            <p class="card-text mb-auto">
-              V&nbsp;audiowalku následujete hlas ze sluchátek, který vás provází trasou skrze nečekaná místa v&nbsp;pražské Libni.
-            </p>
-            <a href="https://pomezi.com/projekt/nad-mestem" target="_blank" class="gap-1">
-              pomezi.com <i class="bi bi-box-arrow-up-right"></i>
-            </a>
-          </div>
-          <div class="col-4 d-none d-lg-block img-thumbnail img-src-nadmestem">
-          </div>
-        </div>
-      </div>
+<footer class="container py-5">
+  <h2 class="text-center my-5" id="kontakt">Kontaktujte nás</h2>
+  <div class="row text-center">
+    <div class="col-12 col-md-4">
+      <h5>Spolupracovali jsme</h5>
+      <ul class="list-unstyled text-small">
+        <li>Pomezí</li>
+        <li>AMU</li>
+        <li>Korzo Národní</li>
+      </ul>
+    </div>
+    <div class="col-12 col-md-4">
+      <h5>Tým tvůrců</h5>
+      <ul class="list-unstyled text-small">
+        <li>Martin Kopeček<br /><small>vývoj mobilní i webové aplikace</small></li>
+        <li>Jan Vlasatý<br /><small>vývoj, UX, grafika</small></li>
+      </ul>
+    </div>
+    <div class="col-12 col-md-4">
+      <h5>Kontakt</h5>
+      <ul class="list-unstyled text-small">
+        <li><a href="mailto:martin.kopecek@smallhill.cz">martin.kopecek@smallhill.cz</a></li>
+        <li><a href="mailto:jan.vlasaty@hotmail.com">jan.vlasaty@hotmail.com</a></li>
+      </ul>
     </div>
   </div>
+</footer>
 
-  <footer class="container py-5">
-    <h2 class="text-center my-5" id="kontakt">Kontaktujte nás</h2>
-    <div class="row text-center">
-      <div class="col-12 col-md-4">
-        <h5>Spolupracovali jsme</h5>
-        <ul class="list-unstyled text-small">
-          <li>Pomezí</li>
-          <li>AMU</li>
-          <li>Korzo Národní</li>
-        </ul>
-      </div>
-      <div class="col-12 col-md-4">
-        <h5>Tým tvůrců</h5>
-        <ul class="list-unstyled text-small">
-          <li>Martin Kopeček<br /><small>vývoj mobilní i webové aplikace</small></li>
-          <li>Jan Vlasatý<br /><small>vývoj, UX, grafika</small></li>
-        </ul>
-      </div>
-      <div class="col-12 col-md-4">
-        <h5>Kontakt</h5>
-        <ul class="list-unstyled text-small">
-          <li><a href="mailto:martin.kopecek@smallhill.cz">martin.kopecek@smallhill.cz</a></li>
-          <li><a href="mailto:jan.vlasaty@hotmail.com">jan.vlasaty@hotmail.com</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+<script>
+  function updateClock() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, "0");
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    document.getElementById("clock").textContent = `${hours}:${minutes}`;
+  }
+  updateClock();
+  setInterval(updateClock, 5000);
 
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-  <script defer data-domain="audiowalk.cz" src="https://plausible.io/js/script.js"></script>
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const hours = now.getHours().toString().padStart(2, '0');
-      const minutes = now.getMinutes().toString().padStart(2, '0');
-      document.getElementById('clock').textContent = `${hours}:${minutes}`;
+  function fillDates() {
+    const now = new Date();
+    const today = now.getDate();
+    const month = now.getMonth() + 1;
+    const year = now.getFullYear();
+    const dates = document.getElementById("dates");
+    dates.innerHTML = `<option selected>Vybrat den</option>`;
+    for (let i = 1; i < 4; i++) {
+      const date = new Date(year, month, today + i);
+      dates.innerHTML += `<option value="${i}">${date.getDate()}. ${date.getMonth()}.</option>`;
     }
-    updateClock();
-    setInterval(updateClock, 5000);
-
-    function fillDates() {
-      const now = new Date();
-      const today = now.getDate();
-      const month = now.getMonth() + 1;
-      const year = now.getFullYear();
-      const dates = document.getElementById('dates');
-      dates.innerHTML = `<option selected>Vybrat den</option>`;
-      for (let i = 1; i < 4; i++) {
-        const date = new Date(year, month, today + i);
-        dates.innerHTML += `<option value="${i}">${date.getDate()}. ${date.getMonth()}.</option>`;
-      }
-    }
-    fillDates();
-  </script>
-</body>
-
-</html>
+  }
+  fillDates();
+</script>

@@ -1,0 +1,171 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+/* @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Lexend+Deca:wght@100..900&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Lexend+Deca:wght@100..900&family=Mea+Culpa&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+.font-edu {
+  font-family: "Edu AU VIC WA NT Pre", sans-serif;
+}
+.font-meaculpa {
+  font-family: "Mea Culpa", sans-serif;
+  line-height: 0.9em;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #343a40;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #ffffff !important;
+}
+
+.jumbotron {
+  /* background-color: #6c757d; */
+  color: #ffffff;
+  padding: 5rem 1rem;
+  background-image: url("images/bg.jpg");
+  background-position: top center;
+  background-size: cover;
+}
+
+.bg-gradient-dark {
+  background-color: #202020;
+  background-image: linear-gradient(45deg, #535353 0%, #3e3e3e 20%, #000000 100%);
+}
+.bg-gradient-light {
+  background-color: #f8f8f8;
+  background-image: linear-gradient(45deg, #ffffff 0%, #e7e7e7 20%, #e4e4e4 100%);
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 5em;
+}
+h2 {
+  font-weight: 800;
+  font-size: 4em;
+}
+h3 {
+  font-weight: 800;
+  font-size: 1.5em;
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  h3 {
+    font-size: 2em;
+  }
+}
+
+.phone-frame {
+  width: 100%;
+  max-width: 300px;
+  min-height: 200px;
+  border-radius: 2rem 2rem 0 0;
+  border-top: 0.5rem solid #fff;
+  border-left: 0.5rem solid #fff;
+  border-right: 0.5rem solid #fff;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+.phone-frame-dark {
+  border-top: 0.5rem solid rgb(33, 37, 41);
+  border-left: 0.5rem solid rgb(33, 37, 41);
+  border-right: 0.5rem solid rgb(33, 37, 41);
+}
+
+.img-thumbnail {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 0;
+  background-color: #000;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.img-src-ukonicka {
+  background-image: url("images/hrad.png");
+}
+.img-src-studenstskarevolta {
+  background-image: url("images/studentskarevolta.jpg");
+}
+.img-src-neviditelnatrznice {
+  background-image: url("images/neviditelnatrznice.jpg");
+}
+.img-src-bedrich {
+  background-image: url("images/bedrich.jpg");
+}
+.img-src-nadmestem {
+  background-image: url("images/nadmestem.jpg");
+}
+.img-src-bilyobraz {
+  background-image: url("images/bilyobraz.jpg");
+}
+
+#clock {
+  font-size: 2.5em;
+  font-weight: 800;
+}
+
+.display-icon {
+  font-size: 2em;
+}
+
+.bg-map2 {
+  background-image: url("images/map2.png");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.bg-map {
+  background-image: url("images/map.png");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.bg-map::after {
+  content: "";
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 0.2em solid white;
+  background-color: rgb(206, 29, 29);
+  box-shadow: 0 0 1.5em 0.1em rgba(206, 29, 29, 0.7);
+  animation: forwards 2s infinite pulse;
+}
+
+.link-external::after {
+  content: "";
+  font-size: 1.5em;
+  margin-left: 0.5em;
+}
